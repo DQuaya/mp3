@@ -1,0 +1,388 @@
+
+/* styled by DonQuaya */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right,blue, orange);
+    background: black;
+    background-size: cover;
+    font-weight: bold;
+    background-attachment: fixed;
+    background-position: center;
+  }
+      
+      /* start of editing the player */
+  
+  .player{
+    height: 85vh;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 70px;
+  }
+
+  .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  .logo a{
+    background: black;
+    border-radius: 20px;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 390px;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+
+  .logo a:hover{
+    color: blue;
+  }
+  
+  .wrapper{
+    border: 1px solid transparent;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black;
+    box-shadow: orange 0px 19px 38px, blue 0px 15px 12px;
+  }
+      
+  .details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+      
+  .track-art {
+    margin: 25px;
+    height: 250px;
+    width: 250px;
+    border:2px solid 	rgb(255, 137, 1);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    -moz-box-shadow: 0px 6px 5px rgb(7, 7, 7);
+    -webkit-box-shadow: 0px 6px 5px black;
+    box-shadow: 0px 6px 5px blue;
+    -moz-border-radius:190px;
+    -webkit-border-radius:190px;
+    border-radius:190px;
+  }
+  
+      /* end */
+  
+      /* start customize player appearance */
+  .now-playing {
+    font-size: 1rem;
+  }
+      
+  .track-name {
+    font-size: 2.5rem;
+    color: orange;
+  }
+      
+  .track-artist {
+    margin-top: 5px;
+    font-size: 1.5rem;
+  }
+      
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .active{
+    color: black;
+  }
+      
+  .repeat-track,
+  .random-track,
+  .playpause-track,
+  .prev-track,
+  .next-track {
+    padding: 25px;
+    opacity: 0.8;
+    transition: opacity .2s;
+  }
+      
+  .repeat-track:hover,
+  .random-track:hover,
+  .playpause-track:hover,
+  .prev-track:hover,
+  .next-track:hover {
+    opacity: 1.0;
+  }
+      
+  .slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+      
+  
+      /* start of the volume edits */
+  .seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: orange;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+      
+  .seek_slider::-webkit-slider-thumb,
+  .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: rgb(255, 137, 1);
+    border: 3px solid #0a02fa;
+    cursor: grab;
+    border-radius: 100%;
+  }
+      
+  .seek_slider:hover,
+  .volume_slider:hover {
+    opacity: 1.0;
+  }
+      
+  .seek_slider {
+    width: 60%;
+  }
+      
+  .volume_slider {
+    width: 30%;
+  }
+      
+  .current-time,
+  .total-duration {
+      padding: 10px;
+  }
+      
+    i.fa-volume-down,
+    i.fa-volume-up {
+      padding: 10px;
+    }
+    
+    i,
+    i.fa-play-circle,
+    i.fa-pause-circle,
+    i.fa-step-forward,
+    i.fa-step-backward,
+    p {
+      cursor: pointer;
+    }
+   /* end */
+  
+  .randomActive{
+    color: rgb(50, 230, 173);
+  }
+  
+  .rotate {
+    animation: rotation 8s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+      to {
+       transform: rotate(359deg);
+      }
+  }
+  
+  .loader {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loader .stroke{
+    background: blue;
+    height: 150%;
+    width: 10px;
+    border-radius: 50px;
+    margin: 0 5px;
+    animation: animate 1.4s linear infinite;
+  }
+  
+      /* end */
+  
+      /* creating the color changing animation for the stroke */
+  @keyframes animate {
+    50% {
+      height: 20%;
+      background: blue;
+    }
+      
+    100% {
+      background: orange;
+      height: 100%;
+      }
+  }
+  
+        /* start - creating the time length each stroke appears */
+  .stroke:nth-child(1){
+    animation-delay: 0s;
+  }
+  .stroke:nth-child(2){
+    animation-delay: 0.3s;
+  }
+  .stroke:nth-child(3){
+    animation-delay: 0.6s;
+  }
+  .stroke:nth-child(4){
+    animation-delay: 0.9s;
+  }
+  .stroke:nth-child(5){
+    animation-delay: 0.6s;
+  }
+  .stroke:nth-child(6){
+    animation-delay: 0.3s;
+  }
+  .stroke:nth-child(7){
+    animation-delay: 0s;
+  }
+      
+      /* end */
+  
+      /* start customize page content apperance */
+  
+  .logo{
+    display: flex;
+    
+  }
+  
+  /* end */
+
+  
+  
+  h1{
+    margin-top: -8px;
+    color: blue;
+  }
+  
+  
+  .imagebh{
+    position: absolute;
+    left: 6%;
+    top: 44%;
+    z-index: -5;
+    opacity: 0.7;
+  }
+  
+  img{
+    border-radius: 2%;
+  }
+  
+        /* start of */
+  /* Hover color changing animation for the player contol buttons */
+  .fa-play-circle:hover{
+    color: orange;
+  }
+  
+  .fa-step-forward:hover{
+    color: orange;
+  }
+  
+  .fa-step-backward:hover{
+    color: orange;
+  }
+  
+  .fa-random:hover{
+    color: orange;
+  }
+  
+  .fa-repeat:hover{
+    color: orange;
+  }
+  
+  .fa-pause-circle:hover{
+    color: orange;
+  }
+      /* end of hover effect */
+  
+  
+  /* editing player information */
+  .details{
+    color: blue;
+  }
+  
+  .slider_container{
+    color: orange;
+  }
+  
+  .buttons{
+    color: blue;
+  }
+  
+        /* start of */
+  /* Making the site responsive */
+  
+  @media (max-width: 830px){
+    body{
+        /* padding: 0 30px; */
+        display: block;
+    }
+    .track-name{
+        font-size: 30px;
+        color: orange;
+    }
+    .player{
+      height: 900px;
+      background: transparent;
+      flex-direction: column;
+    }
+    .player .wrapper{
+        width: 315px;
+    }
+
+    .wrapper{
+        margin-top: -320px;
+    }
+    i, i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward, p {
+        font-size: 1em;
+    }
+    .imagehb{
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     
+    }
+    .imagebh img{
+     display: none;
+    }
+    .icon{
+      color: rgb(252, 254, 254);
+    }
+      span{
+        color: #fa0202;
+      }
+     h5{
+      color: rgb(8, 8, 8);
+     }
+     font{
+      color: rgb(217, 6, 6);
+     }
+     .context h5{
+      display: none;
+     }
+     
+  }
+  
+  /* styled by DonQuaya */
+
+
+ 
